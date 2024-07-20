@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saldırı Oyunu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h2>Saldırı Oyunu</h2>
+    </header>
+    <div id="frontend">
+      <div id="computer" class="container">
+        <h2>Bilgisayar</h2>
+        <div class="bar">
+          <div class="barValue" :style="computerBarStyles"></div>
+          <p class="percent">{{computerHP > 0 ? computerHP : 0}}%</p>
+        </div>
+      </div>
+
+      <div id="user" class="container">
+        <h2>Zuzu</h2>
+        <div class="bar">
+          <div class="barValue" :style="userBarStyles"></div>
+          <p class="percent">{{userHP > 0 ? userHP : 0 }}%</p>
+        </div>
+      </div>
+      <div class="container" v-if="winner">
+        <h2>Oyun Bitti!</h2>
+        <h3 v-if="winner === 'computer'">Bilgisayar Kazandı!</h3>
+        <h3 v-else-if="winner === 'user'">Zuzu Kazandı!</h3>
+        <h3 v-else>Berabere!</h3>
+
+        <button @click="restart()">Yeni Oyun!</button>
+      </div>
+      <div id="controls" v-else>
+        <button @click="attackToComputer()">Saldır</button>
+        <button @click="powerAttack()" :disabled="mayUseSpecialAttack">
+          Süper Saldırı
+        </button>
+        <button @click="healMe()">Can Ver</button>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: darkmagenta;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-bottom: 20px;
+}
+.container {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+.bar {
+  width: 100%;
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  margin: 10px 0px;
+}
+.barValue {
+  width: 100%;
+  height: 100%;
+  background-color: darkmagenta;
+  border-radius: 20px;
+}
+.percent {
+  margin: 5px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+button {
+  padding: 15px 20px;
+  font-size: 20px;
+  border: none;
+  background-color: darkmagenta;
+  color: white;
+  margin: 10px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+button:hover {
+  background-color: darkorange;
+}
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: black;
+}
+#controls {
+  text-align: center;
+}
